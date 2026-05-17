@@ -1,0 +1,106 @@
+:root {
+  --bg: #0b1020;
+  --surface: #11182d;
+  --surface-2: #1a2442;
+  --text: #e8ecf8;
+  --muted: #a9b3d1;
+  --primary: #6d8cff;
+  --border: rgba(255,255,255,0.08);
+  --max-width: 1120px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: linear-gradient(180deg, #0b1020, #10172b 40%, #0b1020);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  backdrop-filter: blur(12px);
+  background: rgba(11,16,32,0.75);
+  border-bottom: 1px solid var(--border);
+}
+.nav, .section, .hero, .footer {
+  width: min(calc(100% - 2rem), var(--max-width));
+  margin: 0 auto;
+}
+.nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 0;
+}
+.brand { font-weight: 700; }
+.nav-links { display: flex; gap: 1rem; align-items: center; }
+.nav-cta, .button {
+  border: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+}
+.button.primary, .nav-cta {
+  background: var(--primary);
+  color: white;
+  border-color: transparent;
+}
+.hero {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 2rem;
+  padding: 5rem 0 3rem;
+  align-items: center;
+}
+.hero h1, h2 { line-height: 1.1; }
+.hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); margin: 0.5rem 0 1rem; }
+.hero-copy, .section p { color: var(--muted); }
+.eyebrow {
+  color: #9db0ff;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.hero-actions { display: flex; gap: 1rem; margin-top: 1.5rem; }
+.hero-card, .card, .highlight {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 2rem;
+}
+.section { padding: 4rem 0; }
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.faq details {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
+}
+.final-cta {
+  text-align: center;
+  padding-bottom: 6rem;
+}
+.footer {
+  padding: 2rem 0 4rem;
+  color: var(--muted);
+  text-align: center;
+}
+@media (max-width: 800px) {
+  .hero, .split { grid-template-columns: 1fr; }
+  .nav-links a:not(.nav-cta) { display: none; }
+  .hero-actions { flex-direction: column; align-items: flex-start; }
+}
