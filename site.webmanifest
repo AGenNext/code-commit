@@ -1,0 +1,10 @@
+{
+  "name": "Code Commit",
+  "short_name": "Code Commit",
+  "description": "Ship repository-ready content from idea to GitHub in minutes.",
+  "start_url": "/code-commit/",
+  "display": "standalone",
+  "background_color": "#0b1020",
+  "theme_color": "#6d8cff",
+  "icons": []
+}
